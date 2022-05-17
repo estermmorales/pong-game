@@ -1,3 +1,3 @@
-# basic pong game
-## not really optimized but it's cute
+
+## basic pong game
 ## ![pink pong game](https://i.imgur.com/aTW0EKK.gif)
