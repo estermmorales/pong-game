@@ -1,3 +1,3 @@
 
 ## basic pong game
-## ![pink pong game](https://i.imgur.com/aTW0EKK.gif)
+<img src="https://i.imgur.com/aTW0EKK.gif" width="200"/>
