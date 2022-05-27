@@ -23,8 +23,8 @@ public class Game extends Canvas implements Runnable, KeyListener {
 	public static int HEIGHT = 120;
 	public static int SCALE = 3;
 	public boolean start;
-	Font pixelFont;
-	Font pixelFont2;
+	Font pixelFont30, pixelFont15;
+
 
 	public BufferedImage layer = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
 
@@ -34,14 +34,14 @@ public class Game extends Canvas implements Runnable, KeyListener {
 
 	public Game() {
 		try {
-			pixelFont = Font.createFont(Font.TRUETYPE_FONT, new File("8-bit-arcade.ttf")).deriveFont(30f);
+			pixelFont30 = Font.createFont(Font.TRUETYPE_FONT, new File("8-bit-arcade.ttf")).deriveFont(30f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("8-bit-arcade.ttf")));
 		} catch (IOException | FontFormatException e) {
 
 		}
 		try {
-			pixelFont2 = Font.createFont(Font.TRUETYPE_FONT, new File("8-bit-arcade.ttf")).deriveFont(15f);
+			pixelFont15 = Font.createFont(Font.TRUETYPE_FONT, new File("8-bit-arcade.ttf")).deriveFont(15f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("8-bit-arcade.ttf")));
 		} catch (IOException | FontFormatException e) {
@@ -84,10 +84,11 @@ public class Game extends Canvas implements Runnable, KeyListener {
 		Graphics g = layer.getGraphics();
 		g.setColor(Color.pink);
 		g.fillRect(0, 0, WIDTH, HEIGHT);
-		g.setFont(pixelFont);
+		g.setFont(pixelFont30);
 		g.setColor(Color.white);
 		g.drawString("PONG", 55, 30);
-		g.setFont(pixelFont2);
+		g.setFont(pixelFont15);
+
 		g.drawString("press space to start", 18, 80);
 
 		if (start) {
